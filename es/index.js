@@ -32,7 +32,7 @@ class Index {
     const { tmpSecretId, tmpSecretKey, sessionToken } = credentials
     const files = fileList.map(file => {
       const fileExtension = file.name.substring(file.name.lastIndexOf('.') + 1)
-      const newName = uuidv4().replace(/-/g, '') + fileExtension
+      const newName = uuidv4().replace(/-/g, '') + '.' + fileExtension
       const key = dir + '/' + newName
       filesInfo.push({
         newname: newName,
