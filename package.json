@@ -1,6 +1,6 @@
 {
   "name": "m-uploader-cos",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Upload files using Tencent cos",
   "main": "lib/index.js",
   "scripts": {
@@ -29,6 +29,10 @@
   "bugs": {
     "url": "https://github.com/adiu-1024/m-uploader-cos/issues",
     "email": "adiu_1024@163.com"
+  },
+  "registry": {
+    "type": "git",
+    "url": "https://github.com/adiu-1024/m-uploader-cos"
   },
   "files": [
     "package.json",

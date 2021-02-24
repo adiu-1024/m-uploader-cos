@@ -1,7 +1,7 @@
 import COS from 'cos-js-sdk-v5'
 import { v4 as uuidv4 } from 'uuid'
 
-class Index {
+class COSUpload {
   constructor(config) {
     config.pickId = config.pickId.startsWith('#') ? config.pickId : `#${config.pickId}`
     this.events = {}
@@ -56,12 +56,12 @@ class Index {
       SliceSize: 1024 * 1024,
       StorageClass: 'STANDARD',
       onProgress: data => {
-        const progress = parseInt(data.percent * 100)
+        const percentage = parseInt(data.percent * 100)
         const speed = ((data.speed / 1024 / 1024 * 100) / 100).toFixed(2) + ' Mb/s'
         if (typeof getProgress === 'function') {
-          getProgress({ progress, speed })
+          getProgress({ percentage, speed })
         }
-        if (progress == 100) {
+        if (percentage == 100) {
           this.$emit('loading', false)
         }
       }
@@ -79,4 +79,4 @@ class Index {
   }
 }
 
-export default Index
+export default COSUpload
