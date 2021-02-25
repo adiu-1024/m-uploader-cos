@@ -20,12 +20,12 @@ class COSUpload {
   }
   async handleUpload(fileList) {
     this.$emit('loading', true)
-    const { tmpKeyUrl, tokenName = 'TOKEN', getProgress = null } = this.$options
+    const { tmpKeyUrl, authName = 'TOKEN', getProgress = null } = this.$options
     const {
       bucket, region, requestAddress, dir, startTime, expiredTime, credentials
     } = await fetch(tmpKeyUrl, {
       headers: {
-        'Authorization': localStorage.getItem(tokenName)
+        'Authorization': localStorage.getItem(authName)
       }
     }).then(res => res.json())
     const filesInfo = []
