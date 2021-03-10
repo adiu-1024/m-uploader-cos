@@ -1,5 +1,6 @@
 .DS_Store
 node_modules
+README-CN.md
 package-lock.json
 
 # local env files
