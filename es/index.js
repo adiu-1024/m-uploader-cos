@@ -69,7 +69,6 @@ class COSUpload {
         if (percentage == 100) {
           this.fileList = null
           this.$emit('loading', false)
-          this.$off()
         }
       }
     })
@@ -80,9 +79,6 @@ class COSUpload {
   $emit(key, ...args) {
     const cbs = this.events[key]
     cbs && cbs.forEach(cb => cb.call(this, ...args))
-  }
-  $off() {
-    this.events = null
   }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "m-uploader-cos",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "Upload files using Tencent cos",
   "main": "lib/index.js",
   "scripts": {
