@@ -1,4 +1,4 @@
-#### Installation and import
+#### Installing
 * Using npm
   ```cmd
   npm install m-uploader-cos
@@ -9,10 +9,14 @@
   yarn add m-uploader-cos
   ```
 
+* ES6 import
+  ```JS
+  import COSUpload from 'm-uploader-cos'
+  ```
+
 #### Use examples
 * Proxy interception
   ```JS
-  import COSUpload from 'm-uploader-cos'
   const handler = {
     construct(target, args) {
       const { headers = {}, ...config } = args[0]
@@ -32,26 +36,23 @@
     pickId: 'selector',  // id selector
     tmpKeyUrl: '/api/upload/tmpKey'  // Get cos related configuration items through server interface
   })
-  COSUploader.$on('loading', value => {
-    console.log('COSUploading', value)
-  })
   COSUploader.$on('getUploadFileInfo', filesInfo => {
-    console.log('filesInfo', filesInfo)
+    console.log('uploadFileInfo', filesInfo)
   })
   ```
-  Note: through handlefilechange to get the file information for other operations, such as MD5 encryption
+  Note: through getUploadFileInfo to get the file information for other operations, such as MD5 encryption
 
 * Preview local files before uploading
   ```JS
   const COSUploader = new COSUpload({
-    pickId: 'selector',  // id selector
+    pickId: 'selector',
+    tmpKeyUrl: '/api/upload/tmpKey',
     isPreview: true,
-    tmpKeyUrl: '/api/upload/tmpKey'  // Get cos related configuration items through server interface
   })
   COSUploader.$on('getPreviewFileInfo', filesInfo => {
     console.log('previewFileInfo', filesInfo)
   })
-  COSUploader.$on('uploadFileInfo', filesInfo => {
+  COSUploader.$on('getUploadFileInfo', filesInfo => {
     console.log('uploadFileInfo', filesInfo)
   })
   COSUploader.handleUpload(uploadFiles)
