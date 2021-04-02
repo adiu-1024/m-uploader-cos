@@ -38,7 +38,7 @@
     "package.json",
     "README.md",
     "lib/index.js",
-    "lib/utils.js",
+    "lib/utils.js"
   ],
   "license": "MIT",
   "engines": {
