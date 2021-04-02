@@ -1,6 +1,6 @@
 {
   "name": "m-uploader-cos",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Upload files using Tencent cos",
   "main": "lib/index.js",
   "scripts": {
@@ -37,7 +37,8 @@
   "files": [
     "package.json",
     "README.md",
-    "lib/index.js"
+    "lib/index.js",
+    "lib/utils.js",
   ],
   "license": "MIT",
   "engines": {
